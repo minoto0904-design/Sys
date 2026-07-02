@@ -3,6 +3,7 @@ import os
 from analyzer import analisar_sysdiagnose
 
 app = Flask(__name__)
+
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
@@ -20,4 +21,4 @@ def index():
     return render_template("index.html", result=result)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=10000)
